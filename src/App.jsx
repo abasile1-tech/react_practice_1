@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function App() {
   const [counter, setCounter] = useState(0);
+  const [name, setName] = useState("Jason");
 
   const increment = () => {
     setCounter(counter + 1);
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <h1>Hello {name}</h1>
+      <button onClick={() => setName("Bob")}>Change Name</button>
+      <hr />
       <p>Counter: {counter}</p>
       <button onClick={decrement}>Decrement</button>
       <button onClick={increment}>Increment</button>
