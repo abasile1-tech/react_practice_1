@@ -4,15 +4,16 @@ import { useState } from "react";
 function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [counter, setCounter] = useState(0);
+  const [counterX, setCounterX] = useState(0);
+  const [counterY, setCounterY] = useState(0);
   const [name, setName] = useState("Jason");
   const [nameInput, setNameInput] = useState("");
 
-  const increment = () => {
+  const increment = (counter, setCounter) => {
     setCounter(counter + 1);
   };
 
-  const decrement = () => {
+  const decrement = (counter, setCounter) => {
     setCounter(counter - 1);
   };
 
@@ -26,9 +27,37 @@ function App() {
       />
       <button onClick={() => setName("Bob")}>Change Name</button>
       <hr />
-      <p>Counter: {counter}</p>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={increment}>Increment</button>
+      <p>CounterX: {counterX}</p>
+      <button
+        onClick={() => {
+          decrement(counterX, setCounterX);
+        }}
+      >
+        Decrement
+      </button>
+      <button
+        onClick={() => {
+          increment(counterX, setCounterX);
+        }}
+      >
+        Increment
+      </button>
+      <hr />
+      <p>CounterY: {counterY}</p>
+      <button
+        onClick={() => {
+          decrement(counterY, setCounterY);
+        }}
+      >
+        Decrement
+      </button>
+      <button
+        onClick={() => {
+          increment(counterY, setCounterY);
+        }}
+      >
+        Increment
+      </button>
     </>
   );
 }
