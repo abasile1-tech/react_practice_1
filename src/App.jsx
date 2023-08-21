@@ -2,6 +2,8 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [counter, setCounter] = useState(0);
   const [name, setName] = useState("Jason");
   const [nameInput, setNameInput] = useState("");
